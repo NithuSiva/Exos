@@ -80,6 +80,30 @@ const main = () => {
 
 	camera.position.z = 500;
 
+	
+	window.addEventListener("keydown", (e) => {
+		console.log(e.code);
+		switch(e.code){
+			case "ArrowLeft":
+				camera.position.x-=10;
+				break;
+			case "ArrowRight":
+				camera.position.x+=10;
+				break;
+			case "ArrowDown":
+				camera.position.z+=10;
+				break;
+			case "ArrowUp":
+				camera.position.z-=10;
+				break;
+		}
+	});
+
+
+	
+
+
+
 	//let firstPerson = new FirstPersonControls(camera, document.body);
 
 	animate();
