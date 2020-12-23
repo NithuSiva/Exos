@@ -80,7 +80,7 @@ const main = () => {
 
 	camera.position.z = 500;
 
-	
+
 	window.addEventListener("keydown", (e) => {
 		console.log(e.code);
 		switch(e.code){
@@ -98,13 +98,6 @@ const main = () => {
 				break;
 		}
 	});
-
-
-	
-
-
-
-	//let firstPerson = new FirstPersonControls(camera, document.body);
 
 	animate();
 
