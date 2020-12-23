@@ -1,0 +1,31 @@
+{
+	"default": {
+		"output_file": "js/main.min.js",
+		"files": [
+			"js/main.js"
+		],
+		"options": [
+			{"define": "DEBUG=false"}
+		],
+		"externs": [
+			"greensock",
+			"imagesloaded",
+			"qry"
+		]
+	},
+	
+	"debug": {
+		"output_file": "js/main.min.js",
+		"files": [
+			"js/main.js"
+		],
+		"options": [
+			{"define": "DEBUG=true"}
+		],
+		"externs": [
+			"greensock",
+			"imagesloaded",
+			"qry"
+		]
+	}
+}
