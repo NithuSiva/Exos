@@ -1,9 +1,11 @@
 let rects = [];
 let g = [randRect()]; //tableau initiale contenant les coordonnes d'un rectangle.//
+
+console.log( document.body.clientWidth, document.body.clientHeight);
 window.addEventListener("load" , main);
 
 function main(event){
-    let n = 400;
+    let n = 100;
     let t = hitTestAll(g,n);
     tableau(5);
     for (let i = 0; i<n; i++){
@@ -31,10 +33,10 @@ function randomColor(){
 }
 
 function hitTest(r1, r2){
-    return (((r1.x + r1.w >= r2.x) && (r1.x <= r2.x + r2.w )) && ((r1.y + r1.h >= r2.y) && (r1.y <= r2.y + r2.h)));
+    return (((r1.x + r1.w >= r2.x) && (r1.x <= r2.x + r2.w )) && ((r1.y + r1.h >= r2.y) && (r1.y <= r2.y + r2.h)) || (((r2.x + r2.w) > document.body.clientWidth) || ((r2.y + r2.h) > document.body.clientHeight)));
 }
    
-function hitTestTableau(l,r){ //fonction qui renvoie vrai lorsque qu'il n'ya pas de collision entre les element du tableau et une letiable randRect(). //
+function hitTestTableau(l,r){ //fonction qui renvoie vrai lorsque qu'il n'ya pas de collision entre les element du tableau et une variable randRect(). //
     let i = 0;
     let len = l.length;
     while(i<len){
