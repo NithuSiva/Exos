@@ -1,8 +1,10 @@
-window.addEventListener("deviceorientation", handleOrientation, true);
 
-let panorama, viewer;
+let panorama, panorama2, viewer;
 
 panorama = new PANOLENS.ImagePanorama( 'asset/first.jpeg' );
+
+panorama2 = new PANOLENS.ImagePanorama( 'asset/second.jpeg' );
+
 
 viewer = new PANOLENS.Viewer({
         container: document.body,        // A DOM Element container
@@ -20,46 +22,39 @@ viewer = new PANOLENS.Viewer({
         indicatorSize: 30,            // Size of View Indicator
         output: 'console'            // Whether and where to output infospot position. Could be 'console' or 'overlay'
     });
-viewer.add( panorama );
 
-//let camera =  new THREE.PerspectiveCamera( viewer.cameraFov, document.body.clientWidth / document.body.clientHeight, 1, 10000 );
+
+
+
 let control = viewer.getControl();
-/*
-window.addEventListener("keydown", (e) => {
-        console.log(e.code);
-        switch(e.code){
-            case "ArrowLeft":
-                camera.position.x-=10;
-                break;
-            case "ArrowRight":
-                camera.position.x+=10;
-                break;
-            case "ArrowDown":
-                camera.position.z+=10;
-                break;
-            case "ArrowUp":
-                camera.position.z-=10;
-                break;
-        }
-    });
-*/
 
-function handleOrientation(event) {
-    //let absolute = event.absolute;
+let hotspot1P1 = new PANOLENS.Infospot(350,PANOLENS.DataImage.Info );
+hotspot1P1.position.set(-8000, 50, -5000 );
+hotspot1P1.addHoverElement( document.getElementById('1'),100);    
 
-    let x = event.beta,  y = event.gamma; 
+let hotspot2P1 = new PANOLENS.Infospot(350,PANOLENS.DataImage.Info );
+hotspot2P1.position.set( 5500, 5, -5400 );
+hotspot2P1.addHoverElement( document.getElementById('audio1'),50); 
 
-   /*
-    let alpha    = event.alpha;
-    let beta     = event.beta;
-    let gamma    = event.gamma;
-    */
-    control.panLeft(y);
-    control.panUp(x);
-    //camera.position.x = x;
-   // camera.position.y = y;
+let hotspot1P2 = new PANOLENS.Infospot(350,PANOLENS.DataImage.Info );
+hotspot1P2.position.set( 0, 0, -5000 );
+hotspot1P2.addHoverElement( document.getElementById('2'),300);    
 
-}
+let hotspot2P2 = new PANOLENS.Infospot(350,PANOLENS.DataImage.Info );
+hotspot2P2.position.set( 5000, 0, 5000 );
+hotspot2P2.addHoverElement( document.getElementById('link'),100); 
 
 
+viewer.add(panorama);
+viewer.add(panorama2);
+
+panorama.add(hotspot1P1);
+panorama.add(hotspot2P1);
+
+
+panorama2.add(hotspot1P2);
+panorama2.add(hotspot2P2);
+
+panorama.link(panorama2, new THREE.Vector3( -129.01, 20, -5521.88 ));
+panorama2.link(panorama, new THREE.Vector3( 8540, 20, 1421.88 ));
 
