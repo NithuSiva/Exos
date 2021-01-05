@@ -47,13 +47,7 @@ function handleOrientation(event) {
     //let absolute = event.absolute;
     
     let x = event.beta,  y = event.gamma; 
-    
-    if (x >  90) { x =  90};
-    if (x < -90) { x = -90};
 
-
-    x += 90;
-    y += 90;
    /*
     let alpha    = event.alpha;
     let beta     = event.beta;
