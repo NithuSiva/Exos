@@ -39,11 +39,11 @@ hotspot2P1.addHoverElement( document.getElementById('audio1'),50);
 let hotspot1P2 = new PANOLENS.Infospot(350,PANOLENS.DataImage.Info );
 hotspot1P2.position.set( 0, 0, -5000 );
 hotspot1P2.addHoverElement( document.getElementById('2'),300);    
-
+/*
 let hotspot2P2 = new PANOLENS.Infospot(350,PANOLENS.DataImage.Info );
 hotspot2P2.position.set( 5000, 0, 5000 );
 hotspot2P2.addHoverElement( document.getElementById('link'),100); 
-
+*/
 
 viewer.add(panorama);
 viewer.add(panorama2);
@@ -53,7 +53,7 @@ panorama.add(hotspot2P1);
 
 
 panorama2.add(hotspot1P2);
-panorama2.add(hotspot2P2);
+//panorama2.add(hotspot2P2);
 
 panorama.link(panorama2, new THREE.Vector3( -129.01, 20, -5521.88 ));
 panorama2.link(panorama, new THREE.Vector3( 8540, 20, 1421.88 ));
