@@ -29,5 +29,5 @@ function handleOrientation(event) {
   let gamma    = event.gamma;
 
   // Faites quelque chose avec les données acquises. ;)
-  control.panLeft(alpa);
+  control.panLeft(alpha);
 }
