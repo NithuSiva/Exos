@@ -30,15 +30,18 @@ let control = viewer.getControl();
 
 let hotspot1P1 = new PANOLENS.Infospot(350,PANOLENS.DataImage.Info );
 hotspot1P1.position.set(-8000, 50, -5000 );
-hotspot1P1.addHoverElement( document.getElementById('1'),100);    
+hotspot1P1.addHoverElement( document.getElementById('1'),100); 
+hotspot1P1.addHoverText("Photo de nuit",50);
 
 let hotspot2P1 = new PANOLENS.Infospot(350,PANOLENS.DataImage.Info );
 hotspot2P1.position.set( 5500, 5, -5400 );
-hotspot2P1.addHoverElement( document.getElementById('audio1'),50); 
+hotspot2P1.addHoverElement( document.getElementById('audio1'),50);
+hotspot2P1.addHoverText("Son de la mer",30);
 
 let hotspot1P2 = new PANOLENS.Infospot(350,PANOLENS.DataImage.Info );
 hotspot1P2.position.set( 0, 0, -5000 );
-hotspot1P2.addHoverElement( document.getElementById('2'),300);    
+hotspot1P2.addHoverElement( document.getElementById('2'),300);
+hotspot1P2.addHoverText("Vue de dessus",30);
 /*
 let hotspot2P2 = new PANOLENS.Infospot(350,PANOLENS.DataImage.Info );
 hotspot2P2.position.set( 5000, 0, 5000 );
