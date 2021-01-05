@@ -23,7 +23,7 @@ viewer = new PANOLENS.Viewer({
 viewer.add( panorama );
 
 let camera =  new THREE.PerspectiveCamera( viewer.cameraFov, document.body.clientWidth / document.body.clientHeight, 1, 10000 );
-
+let control = viewer.getControl();
 window.addEventListener("keydown", (e) => {
         console.log(e.code);
         switch(e.code){
@@ -45,7 +45,7 @@ window.addEventListener("keydown", (e) => {
 
 function handleOrientation(event) {
     //let absolute = event.absolute;
-    
+
     let x = event.beta,  y = event.gamma; 
 
    /*
@@ -53,7 +53,8 @@ function handleOrientation(event) {
     let beta     = event.beta;
     let gamma    = event.gamma;
     */
-
+    control.panLeft = x;
+    control.panUp = y;
    camera.position.x = x;
    camera.position.y = y;
 
