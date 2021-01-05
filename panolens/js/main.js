@@ -54,8 +54,8 @@ function handleOrientation(event) {
     let beta     = event.beta;
     let gamma    = event.gamma;
     */
-    control.panLeft(x);
-    control.panUp(y);
+    control.panLeft(y);
+    control.panUp(x);
     //camera.position.x = x;
    // camera.position.y = y;
 
