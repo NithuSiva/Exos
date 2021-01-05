@@ -4,7 +4,6 @@ let panorama, viewer;
 
 panorama = new PANOLENS.ImagePanorama( 'asset/first.jpeg' );
 
-
 viewer = new PANOLENS.Viewer({
         container: document.body,        // A DOM Element container
         controlBar: true,             // Vsibility of bottom control bar
@@ -23,7 +22,7 @@ viewer = new PANOLENS.Viewer({
     });
 viewer.add( panorama );
 
-let control = viewer.getControl();
+viewer.enableControl( PANOLENS.Controls.DEVICEORIENTATION )
 
 function handleOrientation(event) {
   let absolute = event.absolute;
@@ -31,6 +30,7 @@ function handleOrientation(event) {
   let beta     = event.beta;
   let gamma    = event.gamma;
 
-  // Faites quelque chose avec les données acquises. ;)
-  control.panLeft(alpha);
 }
+
+
+
