@@ -1,12 +1,5 @@
 window.addEventListener("deviceorientation", handleOrientation, true);
 
-function handleOrientation(event) {
-  var absolute = event.absolute;
-  var alpha    = event.alpha;
-  var beta     = event.beta;
-  var gamma    = event.gamma;
-}
-
 let panorama, viewer;
 
 panorama = new PANOLENS.ImagePanorama( 'asset/first.jpeg' );
@@ -28,3 +21,13 @@ viewer = new PANOLENS.Viewer({
         output: 'console'            // Whether and where to output infospot position. Could be 'console' or 'overlay'
     });
 viewer.add( panorama );
+
+function handleOrientation(event) {
+  let absolute = event.absolute;
+  let alpha    = event.alpha;
+  let beta     = event.beta;
+  let gamma    = event.gamma;
+
+  // Faites quelque chose avec les données acquises. ;)
+  control.panLeft(alpa);
+}
