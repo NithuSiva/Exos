@@ -22,13 +22,20 @@ viewer = new PANOLENS.Viewer({
     });
 viewer.add( panorama );
 
-viewer.enableControl( PANOLENS.Controls.DEVICEORIENTATION )
+let control = viewer.getControl();
+//console.log(control);
+
+//viewer.enableControl( PANOLENS.Controls.DEVICEORIENTATION )
+
+
 
 function handleOrientation(event) {
-  let absolute = event.absolute;
+  //let absolute = event.absolute;
   let alpha    = event.alpha;
   let beta     = event.beta;
   let gamma    = event.gamma;
+  
+  control.panUp(alpha);
 
 }
 
