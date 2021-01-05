@@ -4,6 +4,7 @@ let panorama, viewer;
 
 panorama = new PANOLENS.ImagePanorama( 'asset/first.jpeg' );
 
+
 viewer = new PANOLENS.Viewer({
         container: document.body,        // A DOM Element container
         controlBar: true,             // Vsibility of bottom control bar
@@ -21,6 +22,8 @@ viewer = new PANOLENS.Viewer({
         output: 'console'            // Whether and where to output infospot position. Could be 'console' or 'overlay'
     });
 viewer.add( panorama );
+
+let control = viewer.getControl();
 
 function handleOrientation(event) {
   let absolute = event.absolute;
