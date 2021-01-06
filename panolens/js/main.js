@@ -31,22 +31,27 @@ let control = viewer.getControl();
 let hotspot1P1 = new PANOLENS.Infospot(350,PANOLENS.DataImage.Info );
 hotspot1P1.position.set(-8000, 50, -5000 );
 hotspot1P1.addHoverElement( document.getElementById('1'),100); 
-hotspot1P1.addHoverText("Photo de nuit",50);
+
 
 let hotspot2P1 = new PANOLENS.Infospot(350,PANOLENS.DataImage.Info );
 hotspot2P1.position.set( 5500, 5, -5400 );
-hotspot2P1.addHoverElement( document.getElementById('audio1'),50);
-hotspot2P1.addHoverText("Son de la mer",30);
+hotspot2P1.addHoverElement( document.getElementById('sea'),50);
+
 
 let hotspot1P2 = new PANOLENS.Infospot(350,PANOLENS.DataImage.Info );
 hotspot1P2.position.set( 0, 0, -5000 );
 hotspot1P2.addHoverElement( document.getElementById('2'),300);
-hotspot1P2.addHoverText("Vue de dessus",30);
-/*
+
 let hotspot2P2 = new PANOLENS.Infospot(350,PANOLENS.DataImage.Info );
-hotspot2P2.position.set( 5000, 0, 5000 );
-hotspot2P2.addHoverElement( document.getElementById('link'),100); 
-*/
+hotspot2P2.position.set( 100, 5, 5500 );
+hotspot2P2.addHoverElement( document.getElementById('city'),50);
+
+
+
+let hotspot3P2 = new PANOLENS.Infospot(350,PANOLENS.DataImage.Info );
+hotspot3P2.position.set( 5000, 0, 5000 );
+hotspot3P2.addHoverElement( document.getElementById('link'),100); 
+
 
 viewer.add(panorama);
 viewer.add(panorama2);
@@ -56,7 +61,9 @@ panorama.add(hotspot2P1);
 
 
 panorama2.add(hotspot1P2);
-//panorama2.add(hotspot2P2);
+panorama2.add(hotspot2P2);
+panorama2.add(hotspot3P2);
+
 
 panorama.link(panorama2, new THREE.Vector3( -129.01, 20, -5521.88 ));
 panorama2.link(panorama, new THREE.Vector3( 8540, 20, 1421.88 ));
