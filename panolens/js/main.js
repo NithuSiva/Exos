@@ -37,9 +37,14 @@ let hotspot2P1 = new PANOLENS.Infospot(350,PANOLENS.DataImage.Info );
 hotspot2P1.position.set( 5500, 5, -5400 );
 hotspot2P1.addHoverElement( document.getElementById('sea'),50);
 
+let hotspot3P1 = new PANOLENS.Infospot(350,PANOLENS.DataImage.Info );
+hotspot3P1.position.set( 100, 5, 2500);
+hotspot3P1.addHoverElement( document.getElementById('link2'),150);
+
+
 
 let hotspot1P2 = new PANOLENS.Infospot(350,PANOLENS.DataImage.Info );
-hotspot1P2.position.set( 0, 0, -5000 );
+hotspot1P2.position.set( 50, 0, -6000 );
 hotspot1P2.addHoverElement( document.getElementById('2'),300);
 
 let hotspot2P2 = new PANOLENS.Infospot(350,PANOLENS.DataImage.Info );
@@ -50,7 +55,7 @@ hotspot2P2.addHoverElement( document.getElementById('city'),50);
 
 let hotspot3P2 = new PANOLENS.Infospot(350,PANOLENS.DataImage.Info );
 hotspot3P2.position.set( 5000, 0, 5000 );
-hotspot3P2.addHoverElement( document.getElementById('link'),100); 
+hotspot3P2.addHoverElement( document.getElementById('link'),150); 
 
 
 viewer.add(panorama);
@@ -58,6 +63,7 @@ viewer.add(panorama2);
 
 panorama.add(hotspot1P1);
 panorama.add(hotspot2P1);
+panorama.add(hotspot3P1);
 
 
 panorama2.add(hotspot1P2);
